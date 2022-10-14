@@ -1,7 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
 import LoginForm from "../components/login/LoginForm";
 import LoginHeader from "../components/login/LoginHeader";
 import LoginFooter from "../components/login/LoginFooter";
-import { Route, Routes } from 'react-router-dom';
 import SignupForm from "../components/login/SignupForm";
 
 function Login() {

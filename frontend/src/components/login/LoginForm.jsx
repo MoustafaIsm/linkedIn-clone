@@ -27,7 +27,7 @@ function LoginForm() {
                 Login
             </button>
             <p>Dont have an account?
-                <span className="uppercase text-primary-blue hover:cursor-pointer hover:text-white hover:bg-primary-blue p-1 transition-all duration-300 rounded" onClick={openSignup}>Sign up</span>
+                <span className="uppercase text-primary-blue hover:cursor-pointer hover:text-secondary-blue hover:underline underline-offset-2 p-1 transition-all duration-300 rounded" onClick={openSignup}>Sign up</span>
             </p>
         </form>
     )
