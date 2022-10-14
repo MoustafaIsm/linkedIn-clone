@@ -2,14 +2,14 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import Input from "../common/Input"
 
-function LoginForm({ className }) {
+function LoginForm() {
 
     const nagivate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const openSignup = () => {
-        nagivate('/signup');
+        nagivate('/login/signup');
     }
 
     return (
