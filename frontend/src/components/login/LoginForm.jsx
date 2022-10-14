@@ -9,7 +9,7 @@ function LoginForm() {
     const [password, setPassword] = useState('');
 
     const openSignup = () => {
-        nagivate('/login/signup');
+        nagivate('/signup');
     }
 
     return (

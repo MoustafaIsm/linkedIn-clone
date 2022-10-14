@@ -1,4 +1,4 @@
-function LoginFooter() {
+function Footer() {
     return (
         <footer className="px-10 bg-white">
             <ul className="flex flex-wrap text-sm justify-center items-center text-gray-500">
@@ -18,4 +18,4 @@ function LoginFooter() {
     )
 }
 
-export default LoginFooter
+export default Footer

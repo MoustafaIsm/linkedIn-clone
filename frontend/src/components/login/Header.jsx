@@ -1,4 +1,4 @@
-function LoginHeader() {
+function Header() {
     return (
         <header className="px-10">
             <img src="/linkedin-logo.png" alt="Logo" className="h-20" />
@@ -6,4 +6,4 @@ function LoginHeader() {
     )
 }
 
-export default LoginHeader
+export default Header
