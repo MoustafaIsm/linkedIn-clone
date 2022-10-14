@@ -1,7 +1,10 @@
 
 function Notifications() {
     return (
-        <div>Notifications</div>
+        <div className="ml-72 bg-beige p-4 ">
+            <p className="font-bold text-3xl ">Notifications</p>
+
+        </div>
     )
 }
 
