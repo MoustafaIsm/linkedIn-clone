@@ -1,32 +1,21 @@
-import LoginForm from "../components/login/LoginForm"
+import LoginForm from "../components/login/LoginForm";
+import LoginHeader from "../components/login/LoginHeader";
+import LoginFooter from "../components/login/LoginFooter";
+import { useState } from "react";
 
 function Login() {
     return (
         <div className="bg-beige flex flex-col h-screen">
-            <header className="px-10">
-                <img src="/linkedin-logo.png" alt="Logo" className="h-20" />
-            </header>
+
+            <LoginHeader />
 
             <div className="flex-grow px-10 flex flex-col items-center">
                 <p className="text-4xl my-6">Make the most of your professional life</p>
                 <LoginForm />
             </div>
 
-            <footer className="px-10 bg-white">
-                <ul className="flex flex-wrap text-sm justify-center items-center text-gray-500">
-                    <li className="m-1"><img src="/linkedin-logo-2.png" alt="Logo" className="h-8" /></li>
-                    <li className="m-1">© 2021</li>
-                    <li className="m-1">About</li>
-                    <li className="m-1">Accessibility</li>
-                    <li className="m-1">User Agreement</li>
-                    <li className="m-1">Privacy Policy</li>
-                    <li className="m-1">Cookie Policy</li>
-                    <li className="m-1">Copyright Policy</li>
-                    <li className="m-1">Brand Policy</li>
-                    <li className="m-1">Guest Controls</li>
-                    <li className="m-1">Community Guidelines</li>
-                </ul>
-            </footer>
+            <LoginFooter />
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Input from "../common/Input"
 
-function LoginForm() {
+function LoginForm({ className }) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
