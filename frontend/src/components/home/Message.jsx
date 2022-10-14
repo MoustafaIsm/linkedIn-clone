@@ -1,4 +1,6 @@
 import { useState } from "react";
+import UserMessage from "./UserMessage";
+import OtherMessage from "./OtherMessage";
 
 function Message() {
 
@@ -7,7 +9,7 @@ function Message() {
     return (
         <div className="relative h-full">
             {/* Message input */}
-            <div className="flex gap-2 absolute bottom-0 w-full z-10">
+            <div className="flex gap-2 absolute bottom-0 w-full z-10 bg-white">
                 <input
                     type='text'
                     placeholder='Message'
@@ -17,8 +19,17 @@ function Message() {
                 <button className="bg-primary-blue text-white uppercase font-bold p-2 px-4 rounded hover:cursor-pointer hover:bg-secondary-blue transition-all duration-300">Send</button>
             </div>
             {/* Messages */}
-            <div className="flex flex-col overflow-y-scroll">
-
+            <div className="flex flex-col overflow-y-scroll w-full h-full">
+                <UserMessage />
+                <OtherMessage />
+                <UserMessage />
+                <OtherMessage />
+                <UserMessage />
+                <OtherMessage />
+                <UserMessage />
+                <OtherMessage />
+                <UserMessage />
+                <OtherMessage />
             </div>
         </div>
     )
