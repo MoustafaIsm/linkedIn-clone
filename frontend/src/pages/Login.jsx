@@ -7,7 +7,8 @@ function Login() {
                 <img src="/linkedin-logo.png" alt="Logo" className="h-20" />
             </header>
 
-            <div className="flex-grow px-10 flex justify-center items-center">
+            <div className="flex-grow px-10 flex flex-col items-center">
+                <p className="text-4xl my-6">Make the most of your professional life</p>
                 <LoginForm />
             </div>
 
