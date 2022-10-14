@@ -5,6 +5,7 @@ import Footer from './components/access/Footer';
 import LoginForm from './components/access/LoginForm';
 import SignupForm from './components/access/SignupForm';
 import SideNavigation from "./components/home/SideNavigation";
+import TopNavigation from "./components/home/TopNavigation";
 import Feed from "./pages/Feed";
 import Messages from "./pages/Messages";
 import Notifications from "./pages/Notifications";
@@ -25,6 +26,7 @@ function App() {
                 isAuthenticated ?
                     <>
                         <SideNavigation />
+                        <TopNavigation />
                         <Routes>
                             <Route path="/" element={<Feed />} />
                             <Route path="/home" element={<Feed />} />
