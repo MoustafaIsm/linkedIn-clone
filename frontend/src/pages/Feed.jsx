@@ -1,7 +1,10 @@
+import FeedCard from '../components/home/FeedCard';
 
 function Feed() {
     return (
-        <div>Feed</div>
+        <div className="ml-72 bg-beige p-4">
+            <FeedCard />
+        </div>
     )
 }
 
