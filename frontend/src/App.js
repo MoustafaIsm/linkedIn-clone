@@ -15,10 +15,11 @@ import OtherProfile from "./pages/OtherProfile"
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
-        setIsAuthenticated(localStorage.getItem('token'));
-    }, []);
+        setIsAuthenticated(token);
+    }, [token]);
 
     return (
         <BrowserRouter>
