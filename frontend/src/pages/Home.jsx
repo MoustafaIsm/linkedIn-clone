@@ -11,6 +11,7 @@ function Home() {
         <div>
             <SideNavigation />
             <Routes>
+                <Route path="/" element={<Feed />} />
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/notifications" element={<Notifications />} />
