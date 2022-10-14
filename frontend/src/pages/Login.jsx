@@ -1,3 +1,4 @@
+import LoginForm from "../components/login/LoginForm"
 
 function Login() {
     return (
@@ -6,12 +7,12 @@ function Login() {
                 <img src="/linkedin-logo.png" alt="Logo" className="h-20" />
             </header>
 
-            <div className="flex-grow">
+            <div className="flex-grow px-10 flex justify-center items-center">
                 <LoginForm />
             </div>
 
             <footer className="px-10 bg-white">
-                <ul className="flex text-sm justify-center items-center text-gray-500">
+                <ul className="flex flex-wrap text-sm justify-center items-center text-gray-500">
                     <li className="m-1"><img src="/linkedin-logo-2.png" alt="Logo" className="h-8" /></li>
                     <li className="m-1">© 2021</li>
                     <li className="m-1">About</li>
