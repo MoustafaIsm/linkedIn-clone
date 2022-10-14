@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import SideNavigation from "../components/home/SideNavigation";
-import Feed from "../components/home/Feed";
-import Messages from "../components/home/Messages";
-import Notifications from "../components/home/Notifications";
-import UserProfile from "../components/home/UserProfile";
-import OtherProfile from "../components/home/OtherProfile"
+import Feed from "./home/Feed";
+import Messages from "./home/Messages";
+import Notifications from "./home/Notifications";
+import UserProfile from "./home/UserProfile";
+import OtherProfile from "./home/OtherProfile"
 
 function Home() {
     return (
