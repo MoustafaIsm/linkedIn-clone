@@ -11,3 +11,7 @@ const companySchema = new mongoose.Schema({
     is_recruiting: { type: Boolean, default: false },
     profile_picture_url: { type: String, default: 'NA' },
 });
+
+const Company = mongoose.model('Company', companySchema);
+
+module.exports = Company;
