@@ -15,7 +15,7 @@ function UserProfile() {
         <div className="ml-72 bg-beige p-4 ">
             <div className="flex justify-between">
                 <p className="font-bold text-3xl ">Profile</p>
-                <EditProfileModal />
+                <EditProfileModal isCompany={false} />
             </div>
             <div className="flex p-4 bg-white items-center rounded-lg my-4 shadow-md">
                 <div className="bg-gray-300 rounded-full w-52 h-52">
