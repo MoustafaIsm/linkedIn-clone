@@ -8,6 +8,7 @@ function EditProfileModal({ isCompany }) {
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [feild, setField] = useState('');
+    const [nbrEmployees, setNbrEmployees] = useState('');
 
     return (
         <Popup
@@ -39,9 +40,9 @@ function EditProfileModal({ isCompany }) {
                                 value={feild}
                                 onChange={setField} />
                             <Input
-                                label={'Name'}
-                                value={name}
-                                onChange={setName} />
+                                label={'Number of employees'}
+                                value={nbrEmployees}
+                                onChange={setNbrEmployees} />
                         </form>
                     </div>
                     :
