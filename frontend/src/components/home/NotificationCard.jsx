@@ -1,7 +1,7 @@
 
 function NotificationCard() {
     return (
-        <div className="bg-white p-4 rounded">
+        <div className="bg-white p-4 rounded shadow-md">
             <div className="flex items-center gap-3">
                 <div className="bg-gray-300 rounded-full w-16 h-16">
 
