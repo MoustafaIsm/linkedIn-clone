@@ -1,5 +1,14 @@
+import { useEffect, useState } from "react";
+import JobOpeningCard from "../components/home/JobOpeningCard";
 
 function UserProfile() {
+
+    const [isCompany, setIsCompany] = useState(true);
+
+    useEffect(() => {
+        // setIsCompany(localStorage.getItem('isCompany'));
+    }, []);
+
     return (
         <div className="ml-72 bg-beige p-4 ">
             <div className="flex justify-between">
@@ -28,6 +37,23 @@ function UserProfile() {
                     </div>
                 </div>
             </div>
+            {
+                isCompany ?
+                    <div>
+                        <p className="font-bold text-xl ">Job openings</p>
+                        <div className="bg-white flex">
+                            <JobOpeningCard />
+                            <JobOpeningCard />
+                            <JobOpeningCard />
+                            <JobOpeningCard />
+                            <JobOpeningCard />
+                            <JobOpeningCard />
+                        </div>
+                    </div>
+                    :
+                    <>
+                    </>
+            }
         </div>
     )
 }
