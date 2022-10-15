@@ -16,6 +16,12 @@ function OtherProfile() {
                 <UserInfo isCompany={isCompany} />
             </div>
 
+            <div className="flex p-4 bg-white justify-center rounded-lg my-4 shadow-md">
+                <button className="uppercase bg-primary-blue text-white font-bold py-2 px-5 rounded-lg hover:bg-secondary-blue hover:cursor-pointer">
+                    Follow
+                </button>
+            </div>
+
             isCompany ?
             <div>
                 <p className="font-bold text-xl ">Job openings</p>
