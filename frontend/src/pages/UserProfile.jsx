@@ -24,7 +24,7 @@ function UserProfile() {
                 {/* User info */}
                 <div className="grid grid-cols-2 flex-grow text-xl px-4">
                     <div className="flex flex-col gap-4">
-                        <p>Name</p>
+                        <p className="font-bold">Name</p>
                         <p>Email</p>
                         <p>Location</p>
                         <p>Date of birth</p>
@@ -41,7 +41,7 @@ function UserProfile() {
                 isCompany ?
                     <div>
                         <p className="font-bold text-xl ">Job openings</p>
-                        <div className="bg-white flex">
+                        <div className="flex flex-col gap-4 my-4">
                             <JobOpeningCard />
                             <JobOpeningCard />
                             <JobOpeningCard />
