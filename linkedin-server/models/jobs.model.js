@@ -6,4 +6,6 @@ const jobSchema = new mongoose.Schema({
     applicants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 });
 
-const Job = mongoose.model('Job')
+const Job = mongoose.model('Job', jobSchema);
+
+module.exports = Job;
