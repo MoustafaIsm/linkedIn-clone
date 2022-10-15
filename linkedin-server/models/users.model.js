@@ -14,6 +14,8 @@ const userSchema = new mongoose.Schema({
     works_at: { type: String, default: 'NA' }
 });
 
+const User = mongoose.model('User', userSchema);
+
 const getDate = () => {
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
@@ -21,3 +23,5 @@ const getDate = () => {
     const yyyy = today.getFullYear();
     return dd + '-' + mm + '-' + yyyy;
 }
+
+module.exports = User;
