@@ -1,11 +1,10 @@
-const User = require('../models/users.model');
-const Company = require('../models/companies.model');
 const Follow = require('../models/follows.model');
 
 const addFollow = (req, res) => {
     const { company_id } = req.params;
+
     Follow.create({
-        user: req.body.user.id,
+        user: req.body.user._id,
         following: company_id
     })
         .then(() => {

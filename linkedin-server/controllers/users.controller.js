@@ -1,5 +1,7 @@
 const User = require('../models/users.model');
 const Company = require('../models/companies.model');
+const Follow = require('../models/follows.model');
+const Job = require('../models/jobs.model');
 
 const getUserByToken = async (req, res) => {
     const user = req.body.user;
@@ -62,7 +64,27 @@ const updateUser = async (req, res) => {
 
 }
 
+const getNotifications = async (req, res) => {
+    const user = req.body.user;
+    try {
+        const following = await Follow.find({ user: user._id });
+        const notifications = [];
+        for (const item of following) {
+            const temp = await Job.find({ company_id: item });
+            notifications.concat(temp);
+        }
+        res.json(notifications)
+    } catch (error) {
+        res.status(400).json({
+            status: 'Failed',
+            message: 'Couldn\'t get notification',
+            error: error.message
+        })
+    }
+}
+
 module.exports = {
     getUserByToken,
-    updateUser
+    updateUser,
+    getNotifications
 }
