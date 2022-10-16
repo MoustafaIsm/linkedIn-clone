@@ -34,20 +34,21 @@ const updateUser = async (req, res) => {
             .catch((error) => {
                 res.status(400).json({
                     status: 'Failed',
-                    message: 'Couldn\'t update user succesfully',
+                    message: 'Couldn\'t update user',
                 })
             });
     }
-    Company.findOneAndUpdate(id, {
-        name: newValues.name,
+    User.findOneAndUpdate(id, {
+        first_name: newValues.first_name,
+        last_name: newValues.last_name,
         location: newValues.location,
-        date_of_creation: newValues.date_of_creation,
-        feild: newValues.feild,
-        nbr_of_employees: newValues.nbr_of_employees,
-        is_recruiting: newValues.is_recruiting,
-        profile_picture_url: newValues.profile_picture_url
+        education: newValues.education,
+        degree: newValues.degree,
+        cv_url: newValues.cv_url,
+        profile_picture_url: newValues.profile_picture_url,
+        works_at: newValues.works_at
     })
-        .then((company) => {
+        .then((user) => {
             res.json({
                 status: 'Success',
                 message: 'Updated user succesfully',
@@ -56,7 +57,7 @@ const updateUser = async (req, res) => {
         .catch((error) => {
             res.status(400).json({
                 status: 'Failed',
-                message: 'Couldn\'t update user succesfully',
+                message: 'Couldn\'t update user',
             })
         });
 
