@@ -2,7 +2,6 @@ const User = require('../models/users.model');
 const Company = require('../models/companies.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const Company = require('../models/companies.model');
 
 const login = async (req, res) => {
     const { email, password, isCompany } = req.body;
@@ -72,4 +71,9 @@ const register = async (req, res) => {
             message: err.message
         });
     }
+}
+
+module.exports = {
+    login,
+    register
 }
