@@ -15,24 +15,29 @@ const login = async (req, res) => {
     if (!user)
         return res.status(404).json({
             status: 'Failed',
-            message: 'Invalid Credentials' + user
+            message: 'Invalid Credentials'
         });
 
     const matches = bcrypt.compare(password, user.password);
     if (!matches)
         return res.status(404).json({
             status: 'Failed',
-            message: 'Invalid Credentials' + matches
+            message: 'Invalid Credentials'
         });
 
-    const token = jwt.sign({ email: user.email, name: user.name }, process.env.JWT_SECRET_KEY, {
+    const token = jwt.sign({
+        email: user.email,
+        name: user.name,
+        isCompany: is_company ? true : false
+    }, process.env.JWT_SECRET_KEY, {
         expiresIn: '2h'
     });
     res.status(200).json({
         status: 'Success',
         message: 'Login successfully',
         data: {
-            token: token
+            token: token,
+            isCompany: is_company ? true : false
         }
     });
 }
@@ -52,7 +57,8 @@ const register = async (req, res) => {
                 status: 'Success',
                 message: 'Register succeded',
                 data: {
-                    user: company
+                    user: company,
+                    isCompany: true
                 }
             });
         }
@@ -67,7 +73,8 @@ const register = async (req, res) => {
             status: 'Success',
             message: 'Register succeded',
             data: {
-                user: user
+                user: user,
+                isCompany: false
             }
         });
 
