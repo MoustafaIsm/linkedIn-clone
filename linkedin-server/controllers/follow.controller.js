@@ -41,3 +41,8 @@ const removeFollow = (req, res) => {
             })
         });
 }
+
+module.exports = {
+    addFollow,
+    removeFollow
+}
