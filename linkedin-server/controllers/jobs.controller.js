@@ -23,7 +23,7 @@ const addJob = (req, res) => {
     }
 }
 
-const removeJob = async (req, res) => {
+const removeJob = (req, res) => {
     const job_id = req.body.job_id;
     Job.findByIdAndDelete(job_id)
         .then(() => {
@@ -40,7 +40,32 @@ const removeJob = async (req, res) => {
         });
 }
 
+const addApplicant = async (req, res) => {
+    const id = req.body.user._id;
+    const job_id = req.body.job_id;
+    try {
+        const job = await Job.findById(job_id);
+        job.applicants.push(id);
+        job.save();
+        res.json({
+            status: 'Success',
+            message: 'Applicant added succesfully',
+            data: {
+                job: job
+            }
+        });
+
+    } catch (error) {
+        res.status(400).json({
+            status: 'Failed',
+            message: "Failed to add apllicant"
+        });
+    }
+
+}
+
 module.exports = {
     addJob,
-    removeJob
+    removeJob,
+    addApplicant
 }
