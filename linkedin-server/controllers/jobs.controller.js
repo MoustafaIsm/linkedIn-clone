@@ -58,14 +58,33 @@ const addApplicant = async (req, res) => {
     } catch (error) {
         res.status(400).json({
             status: 'Failed',
-            message: "Failed to add apllicant"
+            message: "Failed to add applicant"
         });
     }
-
 }
+
+const getJobs = async (req, res) => {
+    try {
+        const jobs = await Job.find().limit(30);
+        res.json({
+            status: 'Success',
+            message: 'Got jobs succesfully',
+            data: {
+                jobs: jobs
+            }
+        });
+    } catch (error) {
+        res.status(400).json({
+            status: 'Failed',
+            message: "Failed to get jobs"
+        });
+    }
+}
+
 
 module.exports = {
     addJob,
     removeJob,
-    addApplicant
+    addApplicant,
+    getJobs
 }
