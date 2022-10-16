@@ -44,7 +44,6 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
     const isCompany = req.body.is_company;
-    let user;
     try {
         if (isCompany) {
             const { name, email, password } = req.body;
@@ -63,7 +62,7 @@ const register = async (req, res) => {
             });
         }
         const { first_name, last_name, email, password } = req.body;
-        const user = new Company();
+        const user = new User();
         user.first_name = first_name;
         user.last_name = last_name;
         user.email = email;
