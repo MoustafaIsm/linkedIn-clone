@@ -9,7 +9,6 @@ const addJob = async (req, res) => {
         job.company_id = company_id;
         job.applicants = [];
         job.save();
-
         res.json({
             status: 'Success',
             message: 'Job added succesfully',
@@ -22,4 +21,8 @@ const addJob = async (req, res) => {
             message: error.message
         });
     }
+}
+
+module.exports = {
+    addJob
 }
