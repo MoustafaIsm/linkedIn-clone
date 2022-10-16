@@ -13,14 +13,16 @@ const authMiddleware = async (req, res, next) => {
         });
 
     try {
-        const { isCompany } = req.body;
+        const isCompany = req.body.is_company;
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
         let user;
-        if (isCompany)
+        if (isCompany) {
             user = await Company.findOne({ email: decoded.email }).lean();
-        else
+            req.body.user = { ...user };
+        } else {
             user = await User.findOne({ email: decoded.email }).lean();
-        req.user = { ...user };
+            req.body.user = { ...user };
+        }
         next()
     } catch (error) {
         return res.status(401).json({
