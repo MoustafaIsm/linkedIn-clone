@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { register } from "../../query/auth";
 import Input from "../common/Input"
 
 function SignupForm() {
@@ -14,9 +15,24 @@ function SignupForm() {
         nagivate('/login');
     }
 
+    const registerUser = async (e) => {
+        e.preventDefault();
+        const data = {
+            'is_company': false,
+            'first_name': firstName,
+            'last_name': lastName,
+            'email': email,
+            'password': password
+        };
+        const response = await register(data);
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('isCompany', response.data.isCompany);
+        window.location.href = '/';
+    }
+
     return (
         <div>
-            <form className="rounded bg-white w-96 py-4 flex flex-col items-center gap-4">
+            <form className="rounded bg-white w-96 py-4 flex flex-col items-center gap-4" onSubmit={(e) => registerUser(e)}>
                 <Input
                     label={'First name'}
                     value={firstName}

@@ -29,7 +29,7 @@ function LoginForm() {
         const response = await login(data);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('isCompany', response.data.isCompany);
-        window.location.reload();
+        window.location.href = '/';
     }
 
     return (

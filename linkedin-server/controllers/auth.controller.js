@@ -52,11 +52,21 @@ const register = async (req, res) => {
             company.email = email;
             company.password = await bcrypt.hash(password, 10);
             await company.save();
+
+            const token = jwt.sign({
+                email: company.email,
+                name: company.name,
+                isCompany: isCompany ? true : false
+            }, process.env.JWT_SECRET_KEY, {
+                expiresIn: '2h'
+            });
+
             res.json({
                 status: 'Success',
                 message: 'Register succeded',
                 data: {
                     user: company,
+                    token: token,
                     isCompany: true
                 }
             });
@@ -68,11 +78,19 @@ const register = async (req, res) => {
         user.email = email;
         user.password = await bcrypt.hash(password, 10);
         await user.save();
+        const token = jwt.sign({
+            email: user.email,
+            name: user.name,
+            isCompany: isCompany ? true : false
+        }, process.env.JWT_SECRET_KEY, {
+            expiresIn: '2h'
+        });
         res.json({
             status: 'Success',
             message: 'Register succeded',
             data: {
                 user: user,
+                token: token,
                 isCompany: false
             }
         });
