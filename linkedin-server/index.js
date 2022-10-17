@@ -5,6 +5,14 @@ require('./config/database.config');
 const app = express();
 app.use(express.json());
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 // Routes
 const authRoutes = require('./routes/auth.routes');
 app.use('/auth', authRoutes);
