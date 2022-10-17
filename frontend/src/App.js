@@ -4,6 +4,7 @@ import Header from './components/access/Header';
 import Footer from './components/access/Footer';
 import LoginForm from './components/access/LoginForm';
 import SignupForm from './components/access/SignupForm';
+import SignupCompanyForm from './components/access/SignupCompanyForm';
 import SideNavigation from "./components/home/SideNavigation";
 import TopNavigation from "./components/home/TopNavigation";
 import Feed from "./pages/Feed";
@@ -44,6 +45,7 @@ function App() {
                                 <Route path="/" element={<LoginForm />} />
                                 <Route path='/login' element={<LoginForm />} />
                                 <Route path="/signup" element={<SignupForm />} />
+                                <Route path="/signup_company" element={<SignupCompanyForm />} />
                             </Routes>
                         </div>
                         <Footer />
