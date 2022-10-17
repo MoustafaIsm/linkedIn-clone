@@ -10,7 +10,6 @@ function SideNavigation() {
             <ul className="w-full flex flex-col justify-center gap-1">
                 <li className="w-3/4 m-auto"><img src="/linkedin-logo.png" alt="Logo" /></li>
                 <NavButton title={'home'} active={isActive} changeActive={setIsActive} />
-                <NavButton title={'messages'} active={isActive} changeActive={setIsActive} />
                 <NavButton title={'notifications'} active={isActive} changeActive={setIsActive} />
                 <NavButton title={'profile'} active={isActive} changeActive={setIsActive} />
             </ul>
