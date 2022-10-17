@@ -7,7 +7,6 @@ import SignupForm from './components/access/SignupForm';
 import SideNavigation from "./components/home/SideNavigation";
 import TopNavigation from "./components/home/TopNavigation";
 import Feed from "./pages/Feed";
-import Messages from "./pages/Messages";
 import Notifications from "./pages/Notifications";
 import UserProfile from "./pages/UserProfile";
 import OtherProfile from "./pages/OtherProfile"
@@ -31,7 +30,6 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Feed />} />
                             <Route path="/home" element={<Feed />} />
-                            <Route path="/messages" element={<Messages />} />
                             <Route path="/notifications" element={<Notifications />} />
                             <Route path="/profile" element={<UserProfile />} />
                             <Route path="/other_profile" element={<OtherProfile />} />
